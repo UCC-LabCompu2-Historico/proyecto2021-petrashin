@@ -2,7 +2,7 @@
 Este proyecto corresponde a un simple juego de adivinar los dados
 ## Autor 
 Pedro Nicolas Petrashin
-
+Link [pagina de dados](https://ucc-labcompu2.github.io/proyecto2021-petrashin/)
 ## Tecnologias usadas
 HTML5
 CSS3
