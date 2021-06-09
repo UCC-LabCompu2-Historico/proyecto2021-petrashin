@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="Estilo.css" type="text/css">
     <script type="text/javascript" src="misFunciones.js"></script>
 </head>
-<body>
+<body onload="dibujarDados()" >
 <div class="juego">
 <p><input type="text" name="Nombre" id="player"></p>
 
 <p>
-  <canvas id="img_dados">
+  <canvas id="img_dados" class="ejer" width="400px" height="300px">
  El navegador no soporta canvas
   </canvas>
 </p>
@@ -27,7 +27,7 @@
 </p>
 
 <p>
-  <button name="interruptor">TIRAR DADOS</button>
+  <button name="interruptor" onclick="tirarDados()">TIRAR DADOS</button>
 
 </p>
     <div>
@@ -35,6 +35,9 @@
            Volver
         </button>
     </div>
+<div id="Dad1" class="dado">0</div>
+    <div id="Dad2" class="dado">0</div>
+    <h2 id="status" style="clear:left"></h2>
 </div>
 </body>
 </html>

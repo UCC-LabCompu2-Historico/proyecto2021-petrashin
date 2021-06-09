@@ -45,3 +45,28 @@ function Tutorial(){
     window.open(URLcomp)
 
 }
+
+
+function dibujarDados(){
+var canvas= document.getElementById("img_dados");
+var ctx=canvas.getContext("2d");
+
+ctx.fillStyle="#ffffff";
+ctx.fillRect(120,150,50,50);
+
+ctx.fillRect(200,150,50,50);
+
+}
+
+
+function tirarDados(){
+    var Dad1=document.getElementById("Dad1");
+    var Dad2=document.getElementById("Dad2");
+    var status=document.getElementById("status")
+var d1= Math.floor(Math.random() * 6) + 1;
+var d2= Math.floor(Math.random() * 6) + 1;
+var DadTotal= d1+d2;
+Dad1.innerHTML=d1
+    Dad2.innerHTML=d2
+    status.innerHTML="usted ha sacado un: "+DadTotal+"!!";
+}
