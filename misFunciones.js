@@ -66,7 +66,7 @@ function tirarDados(){
 var d1= Math.floor(Math.random() * 6) + 1;
 var d2= Math.floor(Math.random() * 6) + 1;
 var DadTotal= d1+d2;
-Dad1.innerHTML=d1
-    Dad2.innerHTML=d2
-    status.innerHTML="usted ha sacado un: "+DadTotal+"!!";
+Dad1.innerHTML=d1;
+    Dad2.innerHTML=d2;
+    status.innerHTML="Usted ha sacado un: "+DadTotal+"!!";
 }
