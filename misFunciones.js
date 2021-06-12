@@ -55,18 +55,27 @@ ctx.fillStyle="#ffffff";
 ctx.fillRect(120,150,50,50);
 
 ctx.fillRect(200,150,50,50);
+    ctx.font = "30px Arial";
+    ctx.strokeText("0", 138, 185);
+    ctx.strokeText("0", 218, 185);
 
 }
 
 
 function tirarDados(){
-    var Dad1=document.getElementById("Dad1");
-    var Dad2=document.getElementById("Dad2");
-    var status=document.getElementById("status")
+
+    var status=document.getElementById("status");
+    var canvas= document.getElementById("img_dados");
+    var ctx=canvas.getContext("2d");
 var d1= Math.floor(Math.random() * 6) + 1;
 var d2= Math.floor(Math.random() * 6) + 1;
 var DadTotal= d1+d2;
-Dad1.innerHTML=d1;
-    Dad2.innerHTML=d2;
     status.innerHTML="Usted ha sacado un: "+DadTotal+"!!";
+
+
+    ctx.fillRect(120,150,50,50);
+    ctx.strokeText(d1, 138, 185);
+    ctx.fillRect(200,150,50,50);
+    ctx.strokeText(d2, 218, 185);
+
 }
