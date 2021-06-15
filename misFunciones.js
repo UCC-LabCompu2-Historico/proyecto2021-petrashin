@@ -63,7 +63,7 @@ ctx.fillRect(200,150,50,50);
 
 var DadTotal;
 var aux=6;
-var aux2;
+var aux2=0;
 var aux3=0;
 function tirarDados(){
 
@@ -74,23 +74,21 @@ function tirarDados(){
 var d1= Math.floor(Math.random() * 6) + 1;
 var d2= Math.floor(Math.random() * 6) + 1;
  DadTotal= d1+d2;
-    //status.innerHTML="Usted ha sacado un: "+DadTotal+"!!";
+
 
 
     ctx.fillRect(120,150,50,50);
     ctx.strokeText(d1, 138, 185);
     ctx.fillRect(200,150,50,50);
     ctx.strokeText(d2, 218, 185);
-//aux=DadTotal;
+
     status.innerHTML="Usted ha sacado un: "+DadTotal+" !!";
 if (DadTotal==aux&& aux2==1){
     aux3=1;
     status.innerHTML="Usted ha sacado un: "+DadTotal+" !!";
 
 }
-
-
-    if (DadTotal<aux&& aux2==3){
+  if (DadTotal<aux&& aux2==3){
         aux3=1;
         status.innerHTML="Usted ha sacado un: "+DadTotal+"!! " ;
     }
@@ -105,13 +103,17 @@ if (DadTotal==aux&& aux2==1){
 
         status.innerHTML="Usted ha sacado un: "+DadTotal+".  mejor suerte para la proxima";
     }
+    if (aux2==0){
+        status.innerHTML="seleccione una opcion (superior,inferior,igual) para jugar";
+
+    }
     aux=DadTotal;
     aux3=0;
 }
-//aux=DadTotal;
+
 
 function seleccion(select) {
-//var aux=DadTotal;
+
     if (select == "igual") {
         aux2 = 1;
     }
