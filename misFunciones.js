@@ -62,9 +62,9 @@ ctx.fillRect(200,150,50,50);
 }
 
 var DadTotal;
-var aux=6;
-var aux2=0;
-var aux3=0;
+var aux=6;//almacena el valor anterior de los dados, se inicia con 6
+var aux2=0;//almacena el valor del selector
+var aux3=0;//almacena estado ganador o perdedor (pseudo bool)
 function tirarDados(){
 
     var status=document.getElementById("status");
