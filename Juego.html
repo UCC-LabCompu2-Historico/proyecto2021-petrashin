@@ -20,12 +20,15 @@
   </canvas>
 </p>
 <p>
-    <label for="selector">Seleccione:</label>
-<select name="elijaUno" id="selector" >
-<option value="Superior">Superior</option>
-<option value="Inferior">Inferior</option>
-    <option value="Igual">Igual</option>
-</select>
+
+
+    <input id="superior" type="radio" name="selector" value="superior" onclick="seleccion(this.value)">
+    <label for="superior"> Superior </label>
+    <input id="inferior" type="radio" name="selector" value="inferior" onclick="seleccion(this.value)">
+    <label for="inferior"> inferior </label>
+    <input id="igual" type="radio" name="selector" value="igual" onclick="seleccion(this.value)">
+    <label for="igual"> igual </label>
+
 </p>
 
 <p>
@@ -39,6 +42,7 @@
     </div>
 
     <h2 id="status" style="clear:left"></h2>
+    <h2 id="boolean" style="clear: left"> </h2>
 </div>
 </body>
 </html>

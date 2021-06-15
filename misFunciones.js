@@ -61,21 +61,65 @@ ctx.fillRect(200,150,50,50);
 
 }
 
-
+var DadTotal;
+var aux=6;
+var aux2;
+var aux3=0;
 function tirarDados(){
 
     var status=document.getElementById("status");
     var canvas= document.getElementById("img_dados");
     var ctx=canvas.getContext("2d");
+
 var d1= Math.floor(Math.random() * 6) + 1;
 var d2= Math.floor(Math.random() * 6) + 1;
-var DadTotal= d1+d2;
-    status.innerHTML="Usted ha sacado un: "+DadTotal+"!!";
+ DadTotal= d1+d2;
+    //status.innerHTML="Usted ha sacado un: "+DadTotal+"!!";
 
 
     ctx.fillRect(120,150,50,50);
     ctx.strokeText(d1, 138, 185);
     ctx.fillRect(200,150,50,50);
     ctx.strokeText(d2, 218, 185);
+//aux=DadTotal;
+    status.innerHTML="Usted ha sacado un: "+DadTotal+" !!";
+if (DadTotal==aux&& aux2==1){
+    aux3=1;
+    status.innerHTML="Usted ha sacado un: "+DadTotal+" !!";
 
 }
+
+
+    if (DadTotal<aux&& aux2==3){
+        aux3=1;
+        status.innerHTML="Usted ha sacado un: "+DadTotal+"!! " ;
+    }
+    if (DadTotal>aux&& aux2==2){
+        aux3=1;
+        status.innerHTML="Usted ha sacado un: "+DadTotal+" !!";
+    }
+    if(aux3==1){
+        status.innerHTML="Usted ha sacado un: "+DadTotal+".  Usted ha ganado!! ";
+    }
+    else if(aux3==0){
+
+        status.innerHTML="Usted ha sacado un: "+DadTotal+".  mejor suerte para la proxima";
+    }
+    aux=DadTotal;
+    aux3=0;
+}
+//aux=DadTotal;
+
+function seleccion(select) {
+//var aux=DadTotal;
+    if (select == "igual") {
+        aux2 = 1;
+    }
+    if (select == "superior") {
+        aux2 = 2;
+    }
+    if (select == "inferior") {
+        aux2 = 3;
+    }
+}
+
