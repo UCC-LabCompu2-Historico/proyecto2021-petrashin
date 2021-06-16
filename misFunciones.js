@@ -46,6 +46,14 @@ function Tutorial(){
 
 }
 
+/**
+
+ * Esta es una funcion para dibujar en el canvas
+ * @method dibujarDados
+ * @param N/A
+ * @param N/A
+ * @return canvas
+ */
 
 function dibujarDados(){
 var canvas= document.getElementById("img_dados");
@@ -60,6 +68,14 @@ ctx.fillRect(200,150,50,50);
     ctx.strokeText("0", 218, 185);
 
 }
+/**
+
+ * Esta es una funcion para tirar los dados
+ * @method tirarDados
+ * @param {number} DadTotal- la suma de d1 y d2
+ * @param {number} aux- salva el valor anterior del dado
+ * @return DadTotal;Status;
+ */
 
 var DadTotal;
 var aux=6;//almacena el valor anterior de los dados, se inicia con 6
@@ -111,6 +127,14 @@ if (DadTotal==aux&& aux2==1){
     aux3=0;
 }
 
+/**
+
+ * Esta es una funcion para tener el valor de aux3
+ * @method seleccion
+ * @param {radio} select- el valor de la seleccion
+ * @param {number} aux3- sirve para seguir usando la funcion TirarDados
+ * @return aux3
+ */
 
 function seleccion(select) {
 
