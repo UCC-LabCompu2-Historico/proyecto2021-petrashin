@@ -8,9 +8,9 @@
 */
 
 function CargarWeb(){
-    var URLcomp;
-
-    URLcomp= "Juego.html";
+    var URLcomp,nombre;
+nombre= document.getElementById("nombre");
+    URLcomp= "Juego.html#"+nombre.value;
     window.open(URLcomp,"_self")
 
 }
@@ -54,8 +54,9 @@ function Tutorial(){
  * @param N/A
  * @return canvas
  */
-
+var non;
 function dibujarDados(){
+    var URLcomp;
 var canvas= document.getElementById("img_dados");
 var ctx=canvas.getContext("2d");
 
@@ -66,7 +67,8 @@ ctx.fillRect(200,150,50,50);
     ctx.font = "30px Arial";
     ctx.strokeText("0", 138, 185);
     ctx.strokeText("0", 218, 185);
-
+    URLcomp= window.location.href.split("/")[4];
+    non=URLcomp.split("#")[1];
 }
 /**
 
@@ -113,11 +115,11 @@ if (DadTotal==aux&& aux2==1){
         status.innerHTML="Usted ha sacado un: "+DadTotal+" !!";
     }
     if(aux3==1){
-        status.innerHTML="Usted ha sacado un: "+DadTotal+".  Usted ha ganado!! ";
+        status.innerHTML=""+non+" ha sacado un: "+DadTotal+".  Ha ganado!!";
     }
     else if(aux3==0){
 
-        status.innerHTML="Usted ha sacado un: "+DadTotal+".  mejor suerte para la proxima";
+        status.innerHTML=""+non+" ha sacado un: "+DadTotal+".  mejor suerte para la proxima";
     }
     if (aux2==0){
         status.innerHTML="seleccione una opcion (superior,inferior,igual) para jugar";
