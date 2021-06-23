@@ -11,7 +11,7 @@ function CargarWeb(){
     var URLcomp;
 
     URLcomp= "Juego.html";
-    window.open(URLcomp)
+    window.open(URLcomp,"_self")
 
 }
 
@@ -28,7 +28,7 @@ function CargarWeb(){
 function Regresar(){
     var URLcomp;
     URLcomp= "index.html";
-    window.open(URLcomp)
+    window.open(URLcomp, "_self")
 
 }
 /**
@@ -42,7 +42,7 @@ function Regresar(){
 function Tutorial(){
     var URLcomp;
     URLcomp= "tutorial.html";
-    window.open(URLcomp)
+    window.open(URLcomp,"_self")
 
 }
 
