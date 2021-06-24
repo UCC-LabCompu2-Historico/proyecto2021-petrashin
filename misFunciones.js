@@ -60,13 +60,18 @@ function dibujarDados(){
 var canvas= document.getElementById("img_dados");
 var ctx=canvas.getContext("2d");
 
-ctx.fillStyle="#ffffff";
-ctx.fillRect(120,150,50,50);
 
-ctx.fillRect(200,150,50,50);
-    ctx.font = "30px Arial";
-    ctx.strokeText("1", 138, 185);
-    ctx.strokeText("1", 218, 185);
+    var img = new Image();
+    var img2= new Image();
+    img.src = "imagenes/modelo_dados_1.jpg";
+    img2.src= "imagenes/modelo_dados_1.jpg";
+    canvas.width=canvas.width;
+    img.onload = function () {
+
+        ctx.drawImage(img, 300, 250);
+        ctx.drawImage(img2,500,250);
+    }
+
     URLcomp= window.location.href.split("/")[4];
     non=URLcomp.split("#")[1];
 }
@@ -94,25 +99,60 @@ var d2= Math.floor(Math.random() * 6) + 1;
  DadTotal= d1+d2;
 
 
+    var img = new Image();
+    var img2= new Image();
+    canvas.width=canvas.width;
+    if (d1==1){
+        img.src = "imagenes/modelo_dados_1.jpg";
+    }
+    if (d2==1){
+        img2.src = "imagenes/modelo_dados_1.jpg";
+    }
+    if (d1==2){
+        img.src = "imagenes/modelo_dados_2.jpg";
+    }
+    if (d2==2){
+        img2.src = "imagenes/modelo_dados_2.jpg";
+    }if (d1==3){
+        img.src = "imagenes/modelo_dados_3.jpg";
+    }
+    if (d2==3){
+        img2.src = "imagenes/modelo_dados_3.jpg";
+    }if (d1==4){
+        img.src = "imagenes/modelo_dados_4.jpg";
+    }
+    if (d2==4){
+        img2.src = "imagenes/modelo_dados_4.jpg";
+    }if (d1==5){
+        img.src = "imagenes/modelo_dados_5.jpg";
+    }
+    if (d2==5){
+        img2.src = "imagenes/modelo_dados_5.jpg";
+    }if (d1==6){
+        img.src = "imagenes/modelo_dados_6.jpg";
+    }
+    if (d2==6){
+        img2.src = "imagenes/modelo_dados_6.jpg";
+    }
 
-    ctx.fillRect(120,150,50,50);
-    ctx.strokeText(d1, 138, 185);
-    ctx.fillRect(200,150,50,50);
-    ctx.strokeText(d2, 218, 185);
+    img.onload = function () {
 
-    status.innerHTML="Usted ha sacado un: "+DadTotal+" !!";
+        ctx.drawImage(img, 300, 250);
+        ctx.drawImage(img2,500,250);
+    }
+
+
+
 if (DadTotal==aux&& aux2==1){
     aux3=1;
-    status.innerHTML="Usted ha sacado un: "+DadTotal+" !!";
-
 }
   if (DadTotal<aux&& aux2==3){
         aux3=1;
-        status.innerHTML="Usted ha sacado un: "+DadTotal+"!! " ;
+
     }
     if (DadTotal>aux&& aux2==2){
         aux3=1;
-        status.innerHTML="Usted ha sacado un: "+DadTotal+" !!";
+
     }
     if(aux3==1){
         status.innerHTML=""+non+" ha sacado un: "+DadTotal+".  Ha ganado!!";
