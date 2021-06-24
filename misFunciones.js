@@ -65,8 +65,8 @@ ctx.fillRect(120,150,50,50);
 
 ctx.fillRect(200,150,50,50);
     ctx.font = "30px Arial";
-    ctx.strokeText("0", 138, 185);
-    ctx.strokeText("0", 218, 185);
+    ctx.strokeText("1", 138, 185);
+    ctx.strokeText("1", 218, 185);
     URLcomp= window.location.href.split("/")[4];
     non=URLcomp.split("#")[1];
 }
