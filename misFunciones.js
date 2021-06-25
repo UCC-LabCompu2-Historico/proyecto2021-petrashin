@@ -63,8 +63,8 @@ var ctx=canvas.getContext("2d");
 
     var img = new Image();
     var img2= new Image();
-    img.src = "imagenes/modelo_dados_1.jpg";
-    img2.src= "imagenes/modelo_dados_1.jpg";
+    img.src = "imagenes/d1.jpg";
+    img2.src= "imagenes/d1.jpg";
     canvas.width=canvas.width;
     img.onload = function () {
 
@@ -85,88 +85,14 @@ var ctx=canvas.getContext("2d");
  */
 
 var DadTotal;
+var d1; //= Math.floor(Math.random() * 6) + 1;
+var d2;// = Math.floor(Math.random() * 6) + 1;
 var aux=6;//almacena el valor anterior de los dados, se inicia con 6
 var aux2=0;//almacena el valor del selector
 var aux3=0;//almacena estado ganador o perdedor (pseudo bool)
-function tirarDados(){
-
-    var status=document.getElementById("status");
-    var canvas= document.getElementById("img_dados");
-    var ctx=canvas.getContext("2d");
-
-var d1= Math.floor(Math.random() * 6) + 1;
-var d2= Math.floor(Math.random() * 6) + 1;
- DadTotal= d1+d2;
-
-
-    var img = new Image();
-    var img2= new Image();
-    canvas.width=canvas.width;
-    if (d1==1){
-        img.src = "imagenes/modelo_dados_1.jpg";
-    }
-    if (d2==1){
-        img2.src = "imagenes/modelo_dados_1.jpg";
-    }
-    if (d1==2){
-        img.src = "imagenes/modelo_dados_2.jpg";
-    }
-    if (d2==2){
-        img2.src = "imagenes/modelo_dados_2.jpg";
-    }if (d1==3){
-        img.src = "imagenes/modelo_dados_3.jpg";
-    }
-    if (d2==3){
-        img2.src = "imagenes/modelo_dados_3.jpg";
-    }if (d1==4){
-        img.src = "imagenes/modelo_dados_4.jpg";
-    }
-    if (d2==4){
-        img2.src = "imagenes/modelo_dados_4.jpg";
-    }if (d1==5){
-        img.src = "imagenes/modelo_dados_5.jpg";
-    }
-    if (d2==5){
-        img2.src = "imagenes/modelo_dados_5.jpg";
-    }if (d1==6){
-        img.src = "imagenes/modelo_dados_6.jpg";
-    }
-    if (d2==6){
-        img2.src = "imagenes/modelo_dados_6.jpg";
-    }
-
-    img.onload = function () {
-
-        ctx.drawImage(img, 300, 250);
-        ctx.drawImage(img2,500,250);
-    }
-
-
-
-if (DadTotal==aux&& aux2==1){
-    aux3=1;
-}
-  if (DadTotal<aux&& aux2==3){
-        aux3=1;
-
-    }
-    if (DadTotal>aux&& aux2==2){
-        aux3=1;
-
-    }
-    if(aux3==1){
-        status.innerHTML=""+non+" ha sacado un: "+DadTotal+".  Ha ganado!!";
-    }
-    else if(aux3==0){
-
-        status.innerHTML=""+non+" ha sacado un: "+DadTotal+".  mejor suerte para la proxima";
-    }
-    if (aux2==0){
-        status.innerHTML="seleccione una opcion (superior,inferior,igual) para jugar";
-
-    }
-    aux=DadTotal;
-    aux3=0;
+var interva;
+function tirarDados() {
+   interva = setInterval(dibujo,30);
 }
 
 /**
@@ -189,5 +115,116 @@ function seleccion(select) {
     if (select == "inferior") {
         aux2 = 3;
     }
+
 }
 
+var i=0;
+function dibujo() {
+    var canvas = document.getElementById("img_dados");
+    var ctx = canvas.getContext("2d");
+    var status = document.getElementById("status");
+
+    var img = new Image();
+    var img2 = new Image();
+
+
+        d1 = Math.floor(Math.random() * 6) + 1;
+        d2 = Math.floor(Math.random() * 6) + 1;
+        canvas.width = canvas.width;
+        if (d1 == 1) {
+            img.src = "imagenes/d1.jpg";
+
+        }
+        if (d2 == 1) {
+            img2.src = "imagenes/d1.jpg";
+
+        }
+        if (d1 == 2) {
+            img.src = "imagenes/d2.jpg";
+
+        }
+        if (d2 == 2) {
+            img2.src = "imagenes/d2.jpg";
+
+        }
+        if (d1 == 3) {
+            img.src = "imagenes/d3.jpg";
+
+        }
+        if (d2 == 3) {
+            img2.src = "imagenes/d3.jpg";
+
+        }
+        if (d1 == 4) {
+            img.src = "imagenes/d4.jpg";
+
+        }
+        if (d2 == 4) {
+            img2.src = "imagenes/d4.jpg";
+
+        }
+        if (d1 == 5) {
+            img.src = "imagenes/d5.jpg";
+
+        }
+        if (d2 == 5) {
+            img2.src = "imagenes/d5.jpg";
+
+        }
+        if (d1 == 6) {
+            img.src = "imagenes/d6.jpg";
+
+        }
+        if (d2 == 6) {
+            img2.src = "imagenes/d6.jpg";
+
+        }
+
+        img.onload = function () {
+
+            ctx.drawImage(img, 300, 250);
+            ctx.drawImage(img2, 510, 250);
+
+
+        }
+    i +=1;
+        //console.log(d1, d2, i);
+
+
+
+if (i==10){
+     clearInterval(interva);
+     i=0;
+    DadTotal = d1 + d2;
+    console.log(d1,d2,DadTotal);
+
+
+
+
+    if (DadTotal==aux&& aux2==1){
+        aux3=1;
+    }
+    if (DadTotal<aux&& aux2==3){
+        aux3=1;
+
+    }
+    if (DadTotal>aux&& aux2==2){
+        aux3=1;
+
+    }
+    if(aux3==1){
+        status.innerHTML=""+non+" ha sacado un: "+DadTotal+".  Ha ganado!!";
+    }
+    else if(aux3==0){
+
+        status.innerHTML=""+non+" ha sacado un: "+DadTotal+".  mejor suerte para la proxima";
+    }
+    if (aux2==0){
+        status.innerHTML="seleccione una opcion (superior,inferior,igual) para jugar";
+
+    }
+    aux=DadTotal;
+    aux3=0;
+}
+
+}
