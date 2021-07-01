@@ -84,12 +84,11 @@ var ctx=canvas.getContext("2d");
  * @return DadTotal;Status;
  */
 
-var DadTotal;
-var d1; //= Math.floor(Math.random() * 6) + 1;
-var d2;// = Math.floor(Math.random() * 6) + 1;
+
+// = Math.floor(Math.random() * 6) + 1;
 var aux=6;//almacena el valor anterior de los dados, se inicia con 6
 var aux2=0;//almacena el valor del selector
-var aux3=0;//almacena estado ganador o perdedor (pseudo bool)
+;//almacena estado ganador o perdedor (pseudo bool)
 var interva;
 function tirarDados() {
    interva = setInterval(dibujo,30);
@@ -123,7 +122,8 @@ function dibujo() {
     var canvas = document.getElementById("img_dados");
     var ctx = canvas.getContext("2d");
     var status = document.getElementById("status");
-
+    var d1;
+    var d2;
     var img = new Image();
     var img2 = new Image();
 
@@ -195,6 +195,8 @@ function dibujo() {
 if (i==10){
      clearInterval(interva);
      i=0;
+    var DadTotal;
+    var aux3=0
     DadTotal = d1 + d2;
     console.log(d1,d2,DadTotal);
 
